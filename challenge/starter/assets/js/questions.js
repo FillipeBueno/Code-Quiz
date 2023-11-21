@@ -69,8 +69,7 @@ function q4() {
     button4.innerHTML = 'Console log';
     button4.setAttribute('class', 'true');
 
-     stopTimer();
-
+     
 
 }
 
@@ -82,7 +81,7 @@ function StartTimer() {
     }, 1000);
 
 if(timerCount===0){
-    stopTimer();
+   clearInterval(timer);
 
 
 }
@@ -107,7 +106,7 @@ function startGame() {
 }
 
 function stopTimer() {
-    clearInterval(timerInterval);
+    clearInterval(timer);
 }
 
 
