@@ -8,8 +8,8 @@ var button4 = document.getElementById('q4');
 
 var correctCount = 0;
 var wrongCount = 0;
-
-var functions= [q1,q2,q3,q4];
+var counter = 0;
+var functions = [q1, q2, q3, q4];
 
 //First question
 function q1() {
@@ -22,11 +22,11 @@ function q1() {
     button3.setAttribute('class', 'true');
     button4.innerHTML = 'Numbers';
 
-    
+
 
 }
 
-function q2(){
+function q2() {
     questionTitle.innerHTML = 'The condition in an if/else statement is enclosed within _____:'
     button1.innerHTML = 'Quotes';
     button2.innerHTML = 'Curly brackets';
@@ -35,9 +35,10 @@ function q2(){
     button3.setAttribute('class', 'true');
     button4.innerHTML = 'Square brackets';
 
+    return;
 }
 
-function q3(){
+function q3() {
     questionTitle.innerHTML = 'Arrays in JavaScript can be used to store____'
     button1.innerHTML = 'Number and strings';
     button2.innerHTML = 'Other arrays';
@@ -46,10 +47,10 @@ function q3(){
     button4.innerHTML = 'All of the above';
     button4.setAttribute('class', 'true');
 
-
+return;
 }
 
-function q4(){
+function q4() {
     questionTitle.innerHTML = 'a very useful tool used development and debugging for printing content to the debugger is?'
     button1.innerHTML = 'JavaScript';
     button2.innerHTML = 'Terminal/Bash';
@@ -58,6 +59,7 @@ function q4(){
     button4.innerHTML = 'Console log';
     button4.setAttribute('class', 'true');
 
+    return;
 }
 
 //Function to make start screen disappear and display quiz.
@@ -67,16 +69,11 @@ function startGame() {
 
     questions.setAttribute('class', 'show');
 
-
+    q1();
 
 
 
 }
-
-
-
-
-
 
 
 
@@ -94,6 +91,9 @@ button1.addEventListener('click', function () {
         console.log('the wrong option was selected');
         wrongCount--;
     }
+    counter++;
+    functions[counter]()
+    
 });
 
 button2.addEventListener('click', function () {
@@ -105,6 +105,9 @@ button2.addEventListener('click', function () {
         console.log('the wrong option was selected');
         wrongCount--;
     }
+    counter++;
+    functions[counter]();
+    
 });
 
 button3.addEventListener('click', function () {
@@ -116,6 +119,8 @@ button3.addEventListener('click', function () {
         console.log('the wrong option was selected');
         wrongCount--;
     }
+    counter++;
+    functions[counter]()
 });
 button4.addEventListener('click', function () {
     if (button4.classList.contains("true")) {
@@ -126,6 +131,10 @@ button4.addEventListener('click', function () {
         console.log('the wrong option was selected');
         wrongCount--;
     }
+    counter++;
+
+    functions[counter]()
+  
 });
 
 
