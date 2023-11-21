@@ -36,6 +36,28 @@ function q2(){
 
 }
 
+function q3(){
+    questionTitle.innerHTML = 'Arrays in JavaScript can be used to store____'
+    button1.innerHTML = 'Number and strings';
+    button2.innerHTML = 'Other arrays';
+    button3.innerHTML = 'Booleans';
+    //Button 4 is the correct answer.
+    button4.innerHTML = 'All of the above';
+    button4.setAttribute('class', 'true');
+
+
+}
+
+function q4(){
+    questionTitle.innerHTML = 'a very useful tool used development and debugging for printing content to the debugger is?'
+    button1.innerHTML = 'JavaScript';
+    button2.innerHTML = 'Terminal/Bash';
+    button3.innerHTML = 'For Loops';
+    //Button 4 is the correct answer.
+    button4.innerHTML = 'Console log';
+    button4.setAttribute('class', 'true');
+
+}
 
 //Function to make start screen disappear and display quiz.
 function startGame() {
