@@ -9,13 +9,17 @@ var timerElement = document.getElementById('time');
 
 
 
+
 var correctCount = '';
 var wrongCount = '';
 var counter = 0;
 var functions = [q1, q2, q3, q4];
 var timer;
 var timerCount = 75;
-var timerInterval;
+
+
+
+//var timerInterval;
 
 //console.log(correctCount);
 //console.log(wrongCount);
@@ -68,8 +72,11 @@ function q4() {
     //Button 4 is the correct answer.
     button4.innerHTML = 'Console log';
     button4.setAttribute('class', 'true');
+    
 
-     
+    if(counter>=4){
+        stopTimer();
+         }
 
 }
 
@@ -79,13 +86,17 @@ function StartTimer() {
         timerCount--;
         timerElement.textContent = timerCount;
     }, 1000);
-
-if(timerCount===0){
-   clearInterval(timer);
-
+   
 
 }
 
+function endGame(){
+    if(timerCount==0){
+        stopTimer();
+}
+if (counter>=4){
+    stopTimer();
+}
 
             
 
@@ -110,7 +121,9 @@ function stopTimer() {
 }
 
 
+//console.log(stopTimer);
 
+//BUTTONS_________________
 button1.addEventListener('click', function () {
     if (button1.classList.contains("true")) {
         console.log('the correct option was selected');
@@ -128,9 +141,14 @@ button1.addEventListener('click', function () {
     }
     counter++;
     functions[counter]()
+    
+    if(counter>=4){
+       stopTimer();
+        }
 
 
 });
+
 
 button2.addEventListener('click', function () {
     if (button2.classList.contains("true")) {
@@ -139,7 +157,7 @@ button2.addEventListener('click', function () {
         console.log(correctCount);
         
     }
-    else if (button2.classList.contains('false')) {
+     if (button2.classList.contains('false')) {
         console.log('the wrong option was selected');
         wrongCount++;
         console.log(wrongCount);
@@ -148,8 +166,14 @@ button2.addEventListener('click', function () {
     }
     counter++;
     functions[counter]();
+    
+    if(counter>=4){
+        stopTimer();
+        }
+
 
 });
+
 
 button3.addEventListener('click', function () {
     if (button3.classList.contains("true")) {
@@ -157,26 +181,30 @@ button3.addEventListener('click', function () {
         correctCount++;
         console.log(correctCount);
     }
-    else if (button3.classList.contains('false')) {
+    if (button3.classList.contains('false')) {
         console.log('the wrong option was selected');
         wrongCount++;
         console.log(wrongCount);
         timerCount -= 15;
 
-
-        
-
     }
     counter++;
     functions[counter]()
+    
+    if(counter>=4){
+        stopTimer();
+        }
+
 });
+
+
 button4.addEventListener('click', function () {
     if (button4.classList.contains("true")) {
         console.log('the correct option was selected');
         correctCount++;
         console.log(correctCount);
     }
-    else if (button4.classList.contains('false')) {
+    if (button4.classList.contains('false')) {
         console.log('the wrong option was selected');
         wrongCount++;
         console.log(wrongCount);
@@ -188,9 +216,15 @@ button4.addEventListener('click', function () {
 
     functions[counter]()
 
+    
+    if(counter>=4){
+        stopTimer();
+        }
+
+
 });
 
-
+console.log('this is the '+ counter);
 
 buttonStart.addEventListener('click', startGame);
 
