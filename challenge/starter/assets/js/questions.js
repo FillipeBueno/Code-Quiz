@@ -43,6 +43,7 @@ function q3() {
     button1.innerHTML = 'Number and strings';
     button2.innerHTML = 'Other arrays';
     button3.innerHTML = 'Booleans';
+    button3.setAttribute('class','false');
     //Button 4 is the correct answer.
     button4.innerHTML = 'All of the above';
     button4.setAttribute('class', 'true');
@@ -55,6 +56,7 @@ function q4() {
     button1.innerHTML = 'JavaScript';
     button2.innerHTML = 'Terminal/Bash';
     button3.innerHTML = 'For Loops';
+    button3.setAttribute('class','false');
     //Button 4 is the correct answer.
     button4.innerHTML = 'Console log';
     button4.setAttribute('class', 'true');
