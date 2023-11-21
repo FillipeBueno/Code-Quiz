@@ -80,9 +80,8 @@ function StartTimer() {
 
 
 
-    for(var i=0; i<wrongCount.length;i++){
-        timer -=15;       
-    }
+
+            
 
 }
 
@@ -114,6 +113,7 @@ button1.addEventListener('click', function () {
         console.log('the wrong option was selected');
         wrongCount++;
         console.log(wrongCount);
+        timerCount -= 15;
 
     }
     counter++;
@@ -127,11 +127,13 @@ button2.addEventListener('click', function () {
         console.log('the correct option was selected');
         correctCount++;
         console.log(correctCount);
+        
     }
     else if (button2.classList.contains('false')) {
         console.log('the wrong option was selected');
         wrongCount++;
         console.log(wrongCount);
+        timerCount -= 15;
 
     }
     counter++;
@@ -149,6 +151,10 @@ button3.addEventListener('click', function () {
         console.log('the wrong option was selected');
         wrongCount++;
         console.log(wrongCount);
+        timerCount -= 15;
+
+
+        
 
     }
     counter++;
@@ -164,6 +170,8 @@ button4.addEventListener('click', function () {
         console.log('the wrong option was selected');
         wrongCount++;
         console.log(wrongCount);
+        timerCount -= 15;
+
 
     }
     counter++;
