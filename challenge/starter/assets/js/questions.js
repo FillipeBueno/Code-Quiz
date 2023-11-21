@@ -9,9 +9,9 @@ var button4 = document.getElementById('q4');
 var correctCount = 0;
 var wrongCount = 0;
 
+var functions= [q1,q2,q3,q4];
 
-
-//First question
+for ( var i=0; i < functions.length; i++ ){
 function q1() {
 
     questionTitle.innerHTML = 'Commonly used data types DO NOT include:'
@@ -22,6 +22,15 @@ function q1() {
     button3.setAttribute('class', 'true');
     button4.innerHTML = 'Numbers';
 
+    if (button1.classList.contains("true")) {
+        console.log('the correct option was selected');
+        correctCount++;
+    }
+    else if (button1.classList.contains('false')) {
+        console.log('the wrong option was selected');
+        wrongCount--;
+    }
+q2();
 
 }
 
@@ -66,12 +75,9 @@ function startGame() {
 
     questions.setAttribute('class', 'show');
 
-    q1();
 
 
-
-}
-
+}}
 
 
 
