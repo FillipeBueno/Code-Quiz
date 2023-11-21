@@ -15,6 +15,7 @@ var counter = 0;
 var functions = [q1, q2, q3, q4];
 var timer;
 var timerCount = 75;
+var timerInterval;
 
 //console.log(correctCount);
 //console.log(wrongCount);
@@ -68,6 +69,8 @@ function q4() {
     button4.innerHTML = 'Console log';
     button4.setAttribute('class', 'true');
 
+     stopTimer();
+
 
 }
 
@@ -78,7 +81,11 @@ function StartTimer() {
         timerElement.textContent = timerCount;
     }, 1000);
 
+if(timerCount===0){
+    stopTimer();
 
+
+}
 
 
             
@@ -97,6 +104,10 @@ function startGame() {
 
 
 
+}
+
+function stopTimer() {
+    clearInterval(timerInterval);
 }
 
 
