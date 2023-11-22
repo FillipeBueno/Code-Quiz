@@ -13,9 +13,12 @@ var timerElement = document.getElementById('time');
 var correctCount = '';
 var wrongCount = '';
 var counter = 0;
-var functions = [q1, q2, q3, q4];
+var functions = [q1, q2, q3, q4, endGame,finalScore];
 var timer;
 var timerCount = 75;
+var buttonClicked = false;
+
+
 
 
 
@@ -72,13 +75,12 @@ function q4() {
     //Button 4 is the correct answer.
     button4.innerHTML = 'Console log';
     button4.setAttribute('class', 'true');
-    
+   
 
-    if(counter>=4){
-        stopTimer();
-         }
+  
 
 }
+
 
 //TIMER FUNCTION
 function StartTimer() {
@@ -86,21 +88,28 @@ function StartTimer() {
         timerCount--;
         timerElement.textContent = timerCount;
     }, 1000);
-   
-
-}
-
-function endGame(){
     if(timerCount==0){
         stopTimer();
-}
-if (counter>=4){
-    stopTimer();
+
+}}
+
+function endGame() {
+       if (buttonClicked=true){
+        timerCount -= 15;
+        console.log("15 seconds should be taken")
+
+       finalScore();
+
+    }
+    
 }
 
-            
-
+function finalScore(){
+    
 }
+
+
+
 
 //Function to make start screen disappear and display quiz.
 function startGame() {
@@ -137,14 +146,13 @@ button1.addEventListener('click', function () {
         wrongCount++;
         console.log(wrongCount);
         timerCount -= 15;
+        buttonClicked = true;
 
     }
     counter++;
     functions[counter]()
-    
-    if(counter>=4){
-       stopTimer();
-        }
+
+
 
 
 });
@@ -155,21 +163,20 @@ button2.addEventListener('click', function () {
         console.log('the correct option was selected');
         correctCount++;
         console.log(correctCount);
-        
+
     }
-     if (button2.classList.contains('false')) {
+    if (button2.classList.contains('false')) {
         console.log('the wrong option was selected');
         wrongCount++;
         console.log(wrongCount);
         timerCount -= 15;
+        buttonClicked = true;
 
     }
     counter++;
     functions[counter]();
-    
-    if(counter>=4){
-        stopTimer();
-        }
+
+
 
 
 });
@@ -186,14 +193,13 @@ button3.addEventListener('click', function () {
         wrongCount++;
         console.log(wrongCount);
         timerCount -= 15;
+        buttonClicked = true;
 
     }
     counter++;
     functions[counter]()
-    
-    if(counter>=4){
-        stopTimer();
-        }
+
+
 
 });
 
@@ -216,15 +222,12 @@ button4.addEventListener('click', function () {
 
     functions[counter]()
 
-    
-    if(counter>=4){
-        stopTimer();
-        }
+
+
 
 
 });
 
-console.log('this is the '+ counter);
 
 buttonStart.addEventListener('click', startGame);
 
