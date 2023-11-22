@@ -103,8 +103,10 @@ function StartTimer() {
 
 function endGame() {
 
+    timerElement.textContent = timerCount;
+
     stopTimer();
-    console.log("15 seconds should be taken")
+    
 
 
 
@@ -149,7 +151,7 @@ button1.addEventListener('click', function () {
         wrongCount++;
         console.log(wrongCount);
         timerCount -= 15;
-        buttonClicked = true;
+        
 
     }
     counter++;
@@ -173,7 +175,7 @@ button2.addEventListener('click', function () {
         wrongCount++;
         console.log(wrongCount);
         timerCount -= 15;
-        buttonClicked = true;
+        
 
     }
     counter++;
@@ -196,7 +198,7 @@ button3.addEventListener('click', function () {
         wrongCount++;
         console.log(wrongCount);
         timerCount -= 15;
-        buttonClicked = true;
+        
 
     }
     counter++;
