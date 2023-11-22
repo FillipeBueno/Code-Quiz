@@ -13,7 +13,7 @@ var timerElement = document.getElementById('time');
 var correctCount = '';
 var wrongCount = '';
 var counter = 0;
-var functions = [q1, q2, q3, q4, endGame,finalScore];
+var functions = [q1, q2, q3, q4, endGame];
 var timer;
 var timerCount = 75;
 var buttonClicked = false;
@@ -75,38 +75,44 @@ function q4() {
     //Button 4 is the correct answer.
     button4.innerHTML = 'Console log';
     button4.setAttribute('class', 'true');
-   
 
-  
+
+
+
 
 }
 
 
 //TIMER FUNCTION
+
+function stopTimer() {
+    clearInterval(timer);
+}
+
+
 function StartTimer() {
     timer = setInterval(function () {
         timerCount--;
         timerElement.textContent = timerCount;
     }, 1000);
-    if(timerCount==0){
+    if (timerCount == 0) {
         stopTimer();
 
-}}
+    }
+}
 
 function endGame() {
-       if (buttonClicked=true){
-        timerCount -= 15;
-        console.log("15 seconds should be taken")
 
-       finalScore();
+    stopTimer();
+    console.log("15 seconds should be taken")
 
-    }
-    
+
+
+
+
 }
 
-function finalScore(){
-    
-}
+
 
 
 
@@ -125,9 +131,6 @@ function startGame() {
 
 }
 
-function stopTimer() {
-    clearInterval(timer);
-}
 
 
 //console.log(stopTimer);
