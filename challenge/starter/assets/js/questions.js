@@ -6,6 +6,7 @@ var button2 = document.getElementById('q2');
 var button3 = document.getElementById('q3');
 var button4 = document.getElementById('q4');
 var timerElement = document.getElementById('time');
+var checkerEl = document.getElementById('checker');
 
 
 
@@ -22,10 +23,6 @@ var buttonClicked = false;
 
 
 
-//var timerInterval;
-
-//console.log(correctCount);
-//console.log(wrongCount);
 
 //First question
 function q1() {
@@ -37,6 +34,8 @@ function q1() {
     button3.innerHTML = 'Alerts';
     button3.setAttribute('class', 'true');
     button4.innerHTML = 'Numbers';
+
+    
 
 
 
@@ -51,6 +50,8 @@ function q2() {
     button3.setAttribute('class', 'true');
     button4.innerHTML = 'Square brackets';
 
+    
+
 
 }
 
@@ -64,6 +65,8 @@ function q3() {
     button4.innerHTML = 'All of the above';
     button4.setAttribute('class', 'true');
 
+    
+
 
 }
 
@@ -76,6 +79,7 @@ function q4() {
     button4.innerHTML = 'Console log';
     button4.setAttribute('class', 'true');
 
+    
 
 
 
@@ -95,27 +99,24 @@ function StartTimer() {
         timerCount--;
         timerElement.textContent = timerCount;
     }, 1000);
-    if (timerCount == 0) {
-        stopTimer();
+    
 
     }
-}
 
 function endGame() {
+    
+    if (timerCount == '0') {
+        stopTimer();
+        q1();
+    
+    }
 
     timerElement.textContent = timerCount;
 
     stopTimer();
-    
-
-
-
-
-
+   
+endScreen();
 }
-
-
-
 
 
 
@@ -135,28 +136,35 @@ function startGame() {
 
 
 
-//console.log(stopTimer);
+
 
 //BUTTONS_________________
 button1.addEventListener('click', function () {
+    
     if (button1.classList.contains("true")) {
-        console.log('the correct option was selected');
         correctCount++;
-        console.log(correctCount);
+        checkerEl.setAttribute('class', 'show');
+        checkerEl.innerHTML = 'Correct!';
+        setTimeout(function(){
+            checkerEl.setAttribute('class', 'hide');
+            },1000);
 
 
     }
     if (button1.classList.contains('false')) {
-        console.log('the wrong option was selected');
         wrongCount++;
-        console.log(wrongCount);
         timerCount -= 15;
-        
-
+        checkerEl.setAttribute('class', 'show');
+        checkerEl.innerHTML = 'Wrong!';
+        setTimeout(function(){
+        checkerEl.setAttribute('class', 'hide');
+        },500);
     }
+    setTimeout(function() {
     counter++;
     functions[counter]()
 
+},500);
 
 
 
@@ -165,21 +173,31 @@ button1.addEventListener('click', function () {
 
 button2.addEventListener('click', function () {
     if (button2.classList.contains("true")) {
-        console.log('the correct option was selected');
         correctCount++;
-        console.log(correctCount);
+        checkerEl.setAttribute('class', 'show');
+        checkerEl.innerHTML = 'Correct!';
+        setTimeout(function(){
+            checkerEl.setAttribute('class', 'hide');
+            },500);
 
     }
     if (button2.classList.contains('false')) {
-        console.log('the wrong option was selected');
         wrongCount++;
-        console.log(wrongCount);
         timerCount -= 15;
+        checkerEl.setAttribute('class', 'show');
+        checkerEl.innerHTML = 'Wrong!';
+        setTimeout(function(){
+            checkerEl.setAttribute('class', 'hide');
+            },500);
         
 
     }
-    counter++;
-    functions[counter]();
+    setTimeout(function() {
+        counter++;
+        functions[counter]()
+    
+    },500);
+    
 
 
 
@@ -189,20 +207,32 @@ button2.addEventListener('click', function () {
 
 button3.addEventListener('click', function () {
     if (button3.classList.contains("true")) {
-        console.log('the correct option was selected');
         correctCount++;
-        console.log(correctCount);
+        checkerEl.setAttribute('class', 'show');
+        checkerEl.innerHTML = 'Correct!';
+        setTimeout(function(){
+            checkerEl.setAttribute('class', 'hide');
+            },500);
+        
     }
     if (button3.classList.contains('false')) {
-        console.log('the wrong option was selected');
         wrongCount++;
-        console.log(wrongCount);
         timerCount -= 15;
+        checkerEl.setAttribute('class', 'show');
+        checkerEl.innerHTML = 'Wrong!';
+        setTimeout(function(){
+            checkerEl.setAttribute('class', 'hide');
+            },500);
         
 
     }
-    counter++;
-    functions[counter]()
+
+    setTimeout(function() {
+        counter++;
+        functions[counter]()
+    
+    },500);
+    
 
 
 
@@ -211,21 +241,31 @@ button3.addEventListener('click', function () {
 
 button4.addEventListener('click', function () {
     if (button4.classList.contains("true")) {
-        console.log('the correct option was selected');
         correctCount++;
-        console.log(correctCount);
+        checkerEl.setAttribute('class', 'show');
+        checkerEl.innerHTML = 'Correct!';
+        setTimeout(function(){
+            checkerEl.setAttribute('class','hide');
+            },500);
     }
     if (button4.classList.contains('false')) {
-        console.log('the wrong option was selected');
         wrongCount++;
-        console.log(wrongCount);
         timerCount -= 15;
+        checkerEl.setAttribute('class', 'show');
+        checkerEl.innerHTML = 'Wrong!';
+        setTimeout(function(){
+            checkerEl.setAttribute('class','hide');
+            },500);
 
 
     }
-    counter++;
 
-    functions[counter]()
+    setTimeout(function() {
+        counter++;
+        functions[counter]()
+    
+    },500);
+    
 
 
 
