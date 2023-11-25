@@ -14,20 +14,22 @@ function endScreen(){
 
 }
 
-//
-//function highScores(){
-//    
-//    location.href = 'highscores.html';
-//    var email = localStorage.getItem("initials");
-//    var finalScore= localStorage.getItem("score");
-//    
-//
-//    highScoresSpan.textContent = email + finalScore;
-//
-//   
-//
-//}
-//
+
+function highScores(){
+
+    
+    
+    location.href = 'highscores.html';
+    var initialsInput = localStorage.getItem("initials");
+    var finalScore= localStorage.getItem("score");
+    
+
+    highScoresSpan.textContent =  initialsInput + finalScore;
+
+   
+
+}
+
 
 
 
@@ -35,20 +37,16 @@ function endScreen(){
 
 submitButton.addEventListener('click',function(event) {
     event.preventDefault();
-    var initials = document.querySelector("#initials").value;
+    var initialsInput = document.querySelector("#initials").value;
     var finalScore = timerCount;
    
 
-localStorage.setItem("initials", initials);
+localStorage.setItem("initials", initialsInput);
 localStorage.setItem("score",finalScore);
 
-
-location.href = 'highscores.html';
-var email = localStorage.getItem("initials");
-var finalScore= localStorage.getItem("score");
+highScores();
 
 
-highScoresSpan.textContent = email + finalScore;
 
 
 
