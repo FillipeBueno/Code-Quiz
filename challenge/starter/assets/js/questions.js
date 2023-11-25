@@ -116,7 +116,7 @@ function endGame() {
    
 endScreen();
 
-return; 
+
 }
 
 
@@ -166,8 +166,6 @@ button1.addEventListener('click', function () {
     functions[counter]()
 
 },500);
-
-console.log(checkerEl.value);
 
 });
 

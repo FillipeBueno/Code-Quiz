@@ -7,6 +7,7 @@ var highScoresSpan = document.querySelector("#highscores");
 
 
 
+
 function endScreen() {
     choices.setAttribute('class', 'hide');
     endScreenEl.setAttribute('class', 'show');
@@ -38,19 +39,20 @@ function highScores() {
 submitButton.addEventListener('click', function (event) {
     event.preventDefault();
     location.href = 'highscores.html';
-    var initialsInput = document.querySelector("#initials").value;
-    
-    highScoresSpan.textContent = initialsInput + finalScore;
-
-
-    var finalScore = timerCount;
-   localStorage.setItem("initials", initialsInput);
-    localStorage.setItem("score", finalScore);
-
-    highScores();
-
-
-
-
-
+//    var initialsInput = document.querySelector("#initials").value;
+//    
+//    highScoresSpan.textContent = initialsInput + finalScore;
+//
+//
+//    var finalScore = timerCount;
+//   localStorage.setItem("initials", initialsInput);
+//    localStorage.setItem("score", finalScore);
+//
+//    highScores();
+//
+//
+//
+//    console.log('test');
+//
+//
 });
