@@ -17,7 +17,6 @@ var counter = 0;
 var functions = [q1, q2, q3, q4, endGame];
 var timer;
 var timerCount = 75;
-var buttonClicked = false;
 
 
 
@@ -116,6 +115,8 @@ function endGame() {
     stopTimer();
    
 endScreen();
+
+return; 
 }
 
 
@@ -142,17 +143,17 @@ function startGame() {
 button1.addEventListener('click', function () {
     
     if (button1.classList.contains("true")) {
-        correctCount++;
+    
         checkerEl.setAttribute('class', 'show');
         checkerEl.innerHTML = 'Correct!';
         setTimeout(function(){
             checkerEl.setAttribute('class', 'hide');
-            },1000);
+            },500);
 
+        
 
     }
     if (button1.classList.contains('false')) {
-        wrongCount++;
         timerCount -= 15;
         checkerEl.setAttribute('class', 'show');
         checkerEl.innerHTML = 'Wrong!';
@@ -166,14 +167,13 @@ button1.addEventListener('click', function () {
 
 },500);
 
-
+console.log(checkerEl.value);
 
 });
 
 
 button2.addEventListener('click', function () {
     if (button2.classList.contains("true")) {
-        correctCount++;
         checkerEl.setAttribute('class', 'show');
         checkerEl.innerHTML = 'Correct!';
         setTimeout(function(){
@@ -182,7 +182,6 @@ button2.addEventListener('click', function () {
 
     }
     if (button2.classList.contains('false')) {
-        wrongCount++;
         timerCount -= 15;
         checkerEl.setAttribute('class', 'show');
         checkerEl.innerHTML = 'Wrong!';
@@ -207,7 +206,6 @@ button2.addEventListener('click', function () {
 
 button3.addEventListener('click', function () {
     if (button3.classList.contains("true")) {
-        correctCount++;
         checkerEl.setAttribute('class', 'show');
         checkerEl.innerHTML = 'Correct!';
         setTimeout(function(){
@@ -216,7 +214,6 @@ button3.addEventListener('click', function () {
         
     }
     if (button3.classList.contains('false')) {
-        wrongCount++;
         timerCount -= 15;
         checkerEl.setAttribute('class', 'show');
         checkerEl.innerHTML = 'Wrong!';
@@ -241,7 +238,6 @@ button3.addEventListener('click', function () {
 
 button4.addEventListener('click', function () {
     if (button4.classList.contains("true")) {
-        correctCount++;
         checkerEl.setAttribute('class', 'show');
         checkerEl.innerHTML = 'Correct!';
         setTimeout(function(){
@@ -249,7 +245,6 @@ button4.addEventListener('click', function () {
             },500);
     }
     if (button4.classList.contains('false')) {
-        wrongCount++;
         timerCount -= 15;
         checkerEl.setAttribute('class', 'show');
         checkerEl.innerHTML = 'Wrong!';
