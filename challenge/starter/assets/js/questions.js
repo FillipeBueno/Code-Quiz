@@ -7,6 +7,8 @@ var button3 = document.getElementById('q3');
 var button4 = document.getElementById('q4');
 var timerElement = document.getElementById('time');
 var checkerEl = document.getElementById('checker');
+var submitButton = document.querySelector('#submit');
+
 
 
 
@@ -265,6 +267,35 @@ button4.addEventListener('click', function () {
 
 
 });
+
+submitButton.addEventListener('click', function (event) {
+    event.preventDefault();
+ 
+
+
+ 
+  
+ //    var initialsInput = document.querySelector("#initials").value;
+ //    
+ //    highScoresSpan = initialsInput + finalScore;
+ ////
+ //
+ //    var finalScore = timerCount.toString();
+ ////   localStorage.setItem("initials", initialsInput);
+ ////    localStorage.setItem("score", finalScore);
+ ////
+ //  highScores();
+ ////
+ //
+ //console.log(timerCount);
+ //console.log(initialsInput);
+ //console.log(finalScore);
+ //console.log (highScoresSpan);
+ location.href ="highscores.html";
+ 
+ 
+ 
+ });
 
 
 buttonStart.addEventListener('click', startGame);
