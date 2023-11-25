@@ -7,7 +7,7 @@ var highScoresSpan = document.querySelector("#highscores");
 
 
 
-function endScreen(){
+function endScreen() {
     choices.setAttribute('class', 'hide');
     endScreenEl.setAttribute('class', 'show');
     finalscoreEl.innerHTML = timerCount;
@@ -15,18 +15,18 @@ function endScreen(){
 }
 
 
-function highScores(){
+function highScores() {
+
+
 
     
-    
-    location.href = 'highscores.html';
     var initialsInput = localStorage.getItem("initials");
-    var finalScore= localStorage.getItem("score");
-    
+    var finalScore = localStorage.getItem("score");
 
-    highScoresSpan.textContent =  initialsInput + finalScore;
 
-   
+    highScoresSpan.textContent = initialsInput + finalScore;
+
+
 
 }
 
@@ -35,16 +35,19 @@ function highScores(){
 
 
 
-submitButton.addEventListener('click',function(event) {
+submitButton.addEventListener('click', function (event) {
     event.preventDefault();
+    location.href = 'highscores.html';
     var initialsInput = document.querySelector("#initials").value;
+    
+    highScoresSpan.textContent = initialsInput + finalScore;
+
+
     var finalScore = timerCount;
-   
+   localStorage.setItem("initials", initialsInput);
+    localStorage.setItem("score", finalScore);
 
-localStorage.setItem("initials", initialsInput);
-localStorage.setItem("score",finalScore);
-
-highScores();
+    highScores();
 
 
 
