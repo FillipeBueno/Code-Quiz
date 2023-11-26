@@ -9,12 +9,10 @@ var timerElement = document.getElementById('time');
 var checkerEl = document.getElementById('checker');
 var submitButton = document.querySelector('#submit');
 var highScoresSpan = document.querySelector("#highscores");
-
-//var initialsInput = document.getElementById("initials");
-
-
-
-
+var endScreenEl = document.getElementById('end-screen');
+var finalscoreEl = document.getElementById("final-score");
+var submitButton = document.querySelector('#submit');
+var initialsInput = document.querySelector("#initials");
 
 
 var correctCount = '';
@@ -108,6 +106,10 @@ function StartTimer() {
 
     }
 
+    //Hide quiz/Show final score. 
+    
+   
+
 function endGame() {
     
     if (timerCount == '0') {
@@ -124,7 +126,15 @@ endScreen();
 
 
 }
+function endScreen() {
+    choices.setAttribute('class', 'hide');
+    endScreenEl.setAttribute('class', 'show');
+    finalscoreEl.innerHTML = timerCount;
 
+    localStorage.setItem("finalScore", timerCount);
+
+
+}
 
 
 //Function to make start screen disappear and display quiz.
@@ -145,7 +155,7 @@ function startGame() {
 
 
 
-//BUTTONS_________________
+//BUTTONS FOR QUIZ_________________
 button1.addEventListener('click', function () {
     
     if (button1.classList.contains("true")) {
@@ -272,30 +282,44 @@ button4.addEventListener('click', function () {
 
 });
 
+
+//SUBMIT BUTTON
 submitButton.addEventListener('click', function (event) {
     event.preventDefault();
 
+
   
    var initialsInput = document.getElementById("initials").value;
+
+   if ( initialsInput=== "") {
+    alert("Error, initials cannot be blank.");
+   } else {
+
+   localStorage.setItem("initials", initialsInput);
+
+
+   
+
+   
 
  //    
  //    highScoresSpan = initialsInput + finalScore;
  ////
  //
  //    var finalScore = timerCount.toString();
-    localStorage.setItem("initials", initialsInput);
+    
  ////    localStorage.setItem("score", finalScore);
  ////
    highScores();
  ////
  //
  //console.log(timerCount);
- console.log(initialsInput);
+ //console.log(initialsInput);
  //console.log(finalScore);
  //console.log (highScoresSpan);
- location.href ="highscores.html";
  
  
+   }
  
  });
 

@@ -1,43 +1,20 @@
 // New page to manage score and 2 final screens.
-var endScreenEl = document.getElementById('end-screen');
-var finalscoreEl = document.getElementById("final-score");
-var submitButton = document.querySelector('#submit');
-//var initialsInput = document.querySelector("#initials");
 var highScoresSpan = document.querySelector("#highscores");
 
+
 //var li1 = document.createElement("li");
-//var points = li1.textContent = initialsInput;
+//li1.textContent = 'test';
 //highScoresSpan.appendChild(li1);
 
-var initialsInputString = initialsInput;
 
-
-function endScreen() {
-    choices.setAttribute('class', 'hide');
-    endScreenEl.setAttribute('class', 'show');
-    finalscoreEl.innerHTML = timerCount;
-
-}
 
 
 function highScores() {
-
-
-    console.log(initialsInputString);
-
-    localStorage.getItem('initials');
-
-
     
-    //console.log('test');
+    location.href ="highscores.html";
 
-    //highScoresSpan = 'test';
-    
-    //var initialsInput = localStorage.getItem("initials");
-    //var finalScore = localStorage.getItem("score");
-//
-//
-    //highScoresSpan.textContent = initialsInput + finalScore;
+
+    lastScore();
 
 
 
@@ -47,30 +24,23 @@ function highScores() {
 
 
 
-//submitButton.addEventListener('click', function (event) {
-//   event.preventDefault();
-//
-//   
-//location.href ="highscores.html";
-//
-//
-// 
-//    var initialsInput = document.querySelector("#initials").value;
-//    
-//    highScoresSpan = initialsInput + finalScore;
-////
-//
-//    var finalScore = timerCount.toString();
-////   localStorage.setItem("initials", initialsInput);
-////    localStorage.setItem("score", finalScore);
-////
-//  highScores();
-////
-//
-//console.log(timerCount);
-//console.log(initialsInput);
-//console.log(finalScore);
-//console.log (highScoresSpan);
+function lastScore () {
 
-//console.log('test');
-//});
+    var li1 = document.createElement("li");
+li1.textContent = 'test';
+
+var myList = document.getElementById("highscores");
+myList.appendChild(li1);
+//
+//
+//   var lastInitials= localStorage.getItem('initials');
+//   var lastScore= localStorage.getItem('finalScore');
+//   console.log(lastInitials);
+//   console.log(lastScore);
+// 
+//var li1 = document.createElement("li");
+//li1.textContent = lastInitials + lastScore;
+//highScoresSpan.appendChild(li1);
+
+//highScoresSpan.textContent = initialsInput + finalScore;
+}
