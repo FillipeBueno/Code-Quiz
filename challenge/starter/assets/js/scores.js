@@ -2,10 +2,14 @@
 var endScreenEl = document.getElementById('end-screen');
 var finalscoreEl = document.getElementById("final-score");
 var submitButton = document.querySelector('#submit');
-var initialsInput = document.querySelector("#initials");
+//var initialsInput = document.querySelector("#initials");
 var highScoresSpan = document.querySelector("#highscores");
 
+//var li1 = document.createElement("li");
+//var points = li1.textContent = initialsInput;
+//highScoresSpan.appendChild(li1);
 
+var initialsInputString = initialsInput;
 
 
 function endScreen() {
@@ -17,8 +21,17 @@ function endScreen() {
 
 
 function highScores() {
-    console.log('test');
 
+
+    console.log(initialsInputString);
+
+    localStorage.getItem('initials');
+
+
+    
+    //console.log('test');
+
+    //highScoresSpan = 'test';
     
     //var initialsInput = localStorage.getItem("initials");
     //var finalScore = localStorage.getItem("score");

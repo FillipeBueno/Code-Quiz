@@ -8,6 +8,10 @@ var button4 = document.getElementById('q4');
 var timerElement = document.getElementById('time');
 var checkerEl = document.getElementById('checker');
 var submitButton = document.querySelector('#submit');
+var highScoresSpan = document.querySelector("#highscores");
+
+//var initialsInput = document.getElementById("initials");
+
 
 
 
@@ -270,25 +274,23 @@ button4.addEventListener('click', function () {
 
 submitButton.addEventListener('click', function (event) {
     event.preventDefault();
- 
 
-
- 
   
- //    var initialsInput = document.querySelector("#initials").value;
+   var initialsInput = document.getElementById("initials").value;
+
  //    
  //    highScoresSpan = initialsInput + finalScore;
  ////
  //
  //    var finalScore = timerCount.toString();
- ////   localStorage.setItem("initials", initialsInput);
+    localStorage.setItem("initials", initialsInput);
  ////    localStorage.setItem("score", finalScore);
  ////
- //  highScores();
+   highScores();
  ////
  //
  //console.log(timerCount);
- //console.log(initialsInput);
+ console.log(initialsInput);
  //console.log(finalScore);
  //console.log (highScoresSpan);
  location.href ="highscores.html";
