@@ -5,6 +5,7 @@
 
 This project was carried out using JavaScript, and the main goal of the project was to create a code that is as clean, optimal and functional as possible, trying as much as possible to reduce unecessary additional lines of code. All available options appear to work as expected, by clicking on the options or even by not clicking it.
 
+Link for deployed application: https://fillipebueno.github.io/Code-Quiz/index.html
 
 
 ## Website interface Image:
