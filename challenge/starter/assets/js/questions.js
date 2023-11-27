@@ -300,26 +300,10 @@ submitButton.addEventListener('click', function (event) {
 
    
 
-   
-
- //    
- //    highScoresSpan = initialsInput + finalScore;
- ////
- //
- //    var finalScore = timerCount.toString();
-    
- ////    localStorage.setItem("score", finalScore);
- ////
-   highScores();
- ////
- //
- //console.log(timerCount);
- //console.log(initialsInput);
- //console.log(finalScore);
- //console.log (highScoresSpan);
- 
+   location.href ="highscores.html";
  
    }
+  
  
  });
 
