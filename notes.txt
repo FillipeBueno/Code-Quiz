@@ -1,2 +1,0 @@
-ERRO ESTA NA linha functions[counter]();
-na ultima vez que rodamos o codigo ele buga algo nessa funcao e nao carrega o resto do codigo.
